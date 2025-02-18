@@ -1,4 +1,4 @@
-** Summary of Function Templatesn**
+** Summary of Function Templates **
 
     - Function Templates as Blueprints
         Function templates act as blueprints for generating function instances.
