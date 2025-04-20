@@ -5,9 +5,13 @@
       constructor executes. They are specified after the constructor’s parameter list, starting with a
       colon : and followed by a list of initializers.
 
-    - They are particularly useful for initializing const members, reference members, and base classes
-      that do not have default constructors.
-
+    - They are particularly useful for initializing:  
+        1- const members
+        2- reference members
+        3- base classes
+        4- members of classes that do not have a default constructor
+        5- members that require complex initialization (e.g., STL containers, smart pointers, etc.)
+        
     - Initializer lists are also more efficient than assignment in the constructor body, as they avoid
       unnecessary default construction and assignment of members. 
 */
@@ -34,6 +38,23 @@ public:
 
 };
 
+class Base {
+    private:
+        int baseValue;
+    
+    public:
+        Base(int val) : baseValue(val) {
+            std::cout << "Base constructor called with value " << baseValue << std::endl;
+        }
+};
+    
+class Derived : public Base {
+    public:
+        Derived(int val) : Base(val) { // initializer list to initialize Base
+            std::cout << "Derived constructor called" << std::endl;
+        }
+};
+
 int main()
 {
 
@@ -42,6 +63,8 @@ int main()
 
     // class_a.const_var1 = 20; // Error: const member cannot be assigned after initialization
     // class_a.ref_var2 = 30;   // Error: reference member cannot be assigned after initialization
+
+    class Derived derived(100); // Calls Base constructor first, then Derived constructor
 
     return 0;
 }
