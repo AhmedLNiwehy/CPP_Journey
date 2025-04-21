@@ -11,9 +11,9 @@
  - They help ensure that resources are properly released when they are no longer
    needed. The three main types of smart pointers in modern C++ are:
     
-    1- unique ptr: Provides exclusive ownership of a resource.
-    2- shared ptr: Provides shared ownership, allowing multiple pointers to own the same resource.
-    3- weak ptr: Provides a non-owning ”weak” reference to a resource managed by shared ptr
+  1- unique ptr: Provides exclusive ownership of a resource.
+  2- shared ptr: Provides shared ownership, allowing multiple pointers to own the same resource.
+  3- weak ptr: Provides a non-owning ”weak” reference to a resource managed by shared ptr
 
 ## 1- unique ptr
 - Is a smart pointer that maintains exclusive ownership of a dynamically allocated object.
@@ -42,4 +42,13 @@
 ### Key Features:
 - **Non-Owning**: weak ptr does not affect the reference count of the managed object.
 - **Expired Check**: Can check if the managed object has been deleted.
+
+# Object Memory Management with Smart Pointers
+ Smart pointers simplify memory management by:
+ • **Automatic Cleanup**: Smart pointers automatically delete objects when they are no longer needed reducing the risk of memory leaks.
+ • **Avoiding Manual Deletion**: Eliminates the need for explicit delete calls.
+ • **Handling Ownership**: Clearly defines ownership semantics with unique ptr,sharedptr, and weakptr.
+
+
+
 
