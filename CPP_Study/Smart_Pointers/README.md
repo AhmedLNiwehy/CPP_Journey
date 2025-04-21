@@ -15,7 +15,7 @@
     2- shared ptr: Provides shared ownership, allowing multiple pointers to own the same resource.
     3- weak ptr: Provides a non-owning ”weak” reference to a resource managed by shared ptr
 
-## unique ptr
+## 1- unique ptr
 - Is a smart pointer that maintains exclusive ownership of a dynamically allocated object.
 - It is non-copyable but movable, which means you can transfer ownership from one
       unique ptr to another but cannot copy it.
@@ -24,5 +24,16 @@
 - **Automatic Deletion**: The object managed by unique ptr is automatically deleted when the
     unique ptr goes out of scope.
 - **Non-Copyable**: unique ptr cannot be copied, only moved.
+
+
+## 2- shared ptr
+- Is a smart pointer that allows multiple pointers to  share ownership of the same resource
+- The resource is only deleted when the last shared ptr owning it is destroyed or reset.
+
+### KeyFeatures:
+- **Reference Counting**: Maintains a reference count to manage the life time of ther esource.
+- **Copyable**: shared ptr can be copied, and each copy increments the reference count.
+
+
 
 
