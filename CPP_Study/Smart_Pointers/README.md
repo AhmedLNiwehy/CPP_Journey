@@ -30,10 +30,16 @@
 - Is a smart pointer that allows multiple pointers to  share ownership of the same resource
 - The resource is only deleted when the last shared ptr owning it is destroyed or reset.
 
-### KeyFeatures:
+### Key Features:
 - **Reference Counting**: Maintains a reference count to manage the life time of ther esource.
 - **Copyable**: shared ptr can be copied, and each copy increments the reference count.
 
 
+## 3- weak ptr
+- Is a smart pointer that provides a non-owning reference to an object managed by sharedptr.
+- It is used to break circular references between shared ptr instances and avoid memory leaks.
 
+### Key Features:
+- **Non-Owning**: weak ptr does not affect the reference count of the managed object.
+- **Expired Check**: Can check if the managed object has been deleted.
 
